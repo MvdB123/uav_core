@@ -23,7 +23,7 @@ sudo apt-get -y install ros-foxy-desktop
 
 # command line autocompletion
 sudo apt-get -y install python3-pip
-python3 -m pip install -U argcomplete
+pip3 install -U argcomplete
 
 # install colcon
-python3 -m pip install colcon-common-extensions
+sudo apt install python3-colcon-common-extensions

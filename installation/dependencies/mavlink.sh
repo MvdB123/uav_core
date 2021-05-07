@@ -48,23 +48,18 @@ then
 
   echo "$0: Installing future"
 
-  # Assuming the venv is already created
-  source ~/projects/mrs_repos/mrs_uav_system/venv/bin/activate
-  source ~/projects/mrs_repos/mrs_uav_system/venv2/bin/activate
-
   if [ "$distro" = "18.04" ]; then
-    [ -z "$DRYRUN" ] && python -m pip install future lxml
-    # [ -z "$DRYRUN" ] && python -H pip install --user future lxml
+    [ -z "$DRYRUN" ] && sudo pip install --user future lxml
+    [ -z "$DRYRUN" ] && sudo -H pip install --user future lxml
   fi
 
-  [ -z "$DRYRUN" ] && python3 -m pip install future lxml
-  # [ -z "$DRYRUN" ] && sudo -H pip3 install --user future lxml
+  [ -z "$DRYRUN" ] && sudo pip3 install --user future lxml
+  [ -z "$DRYRUN" ] && sudo -H pip3 install --user future lxml
 
   if [ "$distro" = "18.04" ]; then
-    [ -z "$DRYRUN" ] && python -m pip install future lxml 
-    [ -z "$DRYRUN" ] && python3 -m pip install future lxml
+    [ -z "$DRYRUN" ] && sudo apt-get -y install python-future python-lxml python3-future python3-lxml
   elif [ "$distro" = "20.04" ]; then
-    [ -z "$DRYRUN" ] && python3 -m pip install future lxml
+    [ -z "$DRYRUN" ] && sudo apt-get -y install python3-future python3-lxml
   fi
 
   echo "$0: Checking out the desired release"
