@@ -71,41 +71,45 @@ sudo apt-get -y install \
 
 fi
 
-# python stuff
-
+# python stuff (assuming venv already created)
+source ~/projects/mrs_repos/mrs_uav_system/venv/bin/activate
+source ~/projects/mrs_repos/mrs_uav_system/venv2/bin/activate
 if [ "$distro" = "18.04" ]; then
 
-sudo apt-get -y install \
-  python-setuptools\
-  python3-setuptools\
-  python-prettytable\
-  python-argparse\
+python3 -m pip install \
+  setuptools\
+  pip\
+  future
+
+
+python -m pip install \
+  setuptools\
+  prettytable\
+  argparse\
   git-core\
-  python-empy\
-  python-serial\
-  python-bloom\
-  python-catkin-tools\
-  python-pip\
-  python3-pip\
-  python-future\
-  python3-future\
-  python-crcmod\
-  python-lxml\
+  empy\
+  serial\
+  bloom\
+  catkin-tools\
+  pip\
+  future\
+  crcmod\
+  lxml
 
 elif [ "$distro" = "20.04" ]; then
 
-sudo apt-get -y install \
-  python3-setuptools\
-  python3-prettytable\
-  python3-empy\
-  python3-serial\
-  python3-bloom\
-  python3-osrf-pycommon\
-  python3-catkin-tools\
-  python3-pip\
-  python3-future\
-  python3-crcmod\
-  python3-lxml\
+python3 -m pip install \
+  setuptools\
+  prettytable\
+  empy\
+  serial\
+  bloom\
+  osrf-pycommon\
+  catkin-tools\
+  pip\
+  future\
+  crcmod\
+  lxml
 
   # python3-argparse\ # TODO find the alternative
 

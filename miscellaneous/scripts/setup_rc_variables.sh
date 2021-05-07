@@ -40,7 +40,7 @@ done
 
 for ((i=0; i < ((${#vars[*]})); i++));
 do
-  ./get_set_rc_variable.sh "$HOME/.bashrc" "${vars[$i]}" "${values[$i]}" "${comments[$i]}"
+  ./get_set_rc_variable.sh "$HOME/.bashrc_mrs" "${vars[$i]}" "${values[$i]}" "${comments[$i]}"
 
   if [ -e "$HOME/.zshrc" ]; then
     ./get_set_rc_variable.sh "$HOME/.zshrc" "${vars[$i]}" "${values[$i]}" "${comments[$i]}"

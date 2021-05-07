@@ -45,16 +45,16 @@ bash $MY_PATH/dependencies/mavros.sh --compile
 
 ## | ------- add sourcing of shell additions to .bashrc ------- |
 
-num=`cat ~/.bashrc | grep "shell_additions.sh" | wc -l`
+num=`cat ~/.bashrc_mrs | grep "shell_additions.sh" | wc -l`
 if [ "$num" -lt "1" ]; then
 
   TEMP=`( cd "$MY_PATH/../miscellaneous/shell_additions" && pwd )`
 
-  echo "Adding source to .bashrc"
+  echo "Adding source to .bashrc_mrs"
   # set bashrc
   echo "
 # MRS uav_core shell configuration
-source $TEMP/shell_additions.sh" >> ~/.bashrc
+source $TEMP/shell_additions.sh" >> ~/.bashrc_mrs
 
 fi
 

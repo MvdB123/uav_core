@@ -9,8 +9,11 @@ trap 'echo "$0: \"${last_command}\" command failed with exit code $?"' ERR
 MY_PATH=`dirname "$0"`
 MY_PATH=`( cd "$MY_PATH" && pwd )`
 
-# install gdb and python3-pil for gdb-imshow
-sudo apt-get -y install gdb python3-pil
+# install for gdb-imshow
+sudo apt-get -y install gdb 
+source ~/projects/mrs_repos/mrs_uav_system/venv/bin/activate
+source ~/projects/mrs_repos/mrs_uav_system/venv2/bin/activate
+python3 -m pip install pil
 
 # link the configuration and mods
 mkdir -p ~/.gdb
